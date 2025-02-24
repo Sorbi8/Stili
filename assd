@@ -19,6 +19,17 @@ end
 getgenv().Executed = true
 
 
+while true do
+    setclipboard("https://discord.gg/nmFwtZH6Xb")
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Discord Link";
+        Text = "Copied to clipboard!";
+        Duration = 5;
+    })
+    wait(10) -- Waits 10 seconds before copying again
+end
+
+
 repeat
     task.wait()
 until game:IsLoaded()
