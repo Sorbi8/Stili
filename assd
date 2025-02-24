@@ -138,17 +138,6 @@ local GetItemValue = function(Type, ItemTable)
 end
 
 
---Discord Clipboard
-while true do
-    setclipboard("https://discord.gg/nmFwtZH6Xb")
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Discord Link";
-        Text = "Copied to clipboard!";
-        Duration = 5;
-    })
-    wait(20) -- Waits 10 seconds before copying again
-end
-
 
 local GetItemValueOfItems = function()
     RAP = 0
